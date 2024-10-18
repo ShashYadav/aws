@@ -12,7 +12,7 @@ regions = regions_input.split(',')
 with pd.ExcelWriter(save_path + '.xlsx', engine='xlsxwriter') as writer:
     for region_name in regions:
         # Set up the EC2 client for the current region
-        session = boto3.Session(profile_name=profilename, region_name=region_name.strip())  # Strip to remove leading/trailing spaces
+        session = boto3.Session(profile_name=profilename, region_name=region_name.strip())  #Strip to remove leading/trailing spaces
         ec2 = session.client('ec2')
 
         # Initialize a DataFrame to store data for the current region
